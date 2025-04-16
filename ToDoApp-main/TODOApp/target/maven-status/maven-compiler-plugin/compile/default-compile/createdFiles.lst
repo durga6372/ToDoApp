@@ -1,0 +1,11 @@
+com\TODO\TODOApp\controler\TaskController.class
+com\TODO\TODOApp\TodoAppApplication.class
+com\TODO\TODOApp\model\Task.class
+com\TODO\TODOApp\repositary\TaskRepositary.class
+com\TODO\TODOApp\controler\RegisterController.class
+com\TODO\TODOApp\service\UserDetailsServiceImpl.class
+com\TODO\TODOApp\controler\AuthController.class
+com\TODO\TODOApp\service\TaskService.class
+com\TODO\TODOApp\repositary\UserRepository.class
+com\TODO\TODOApp\model\User.class
+com\TODO\TODOApp\configuration\SecurityConfig.class
