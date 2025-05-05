@@ -1,11 +1,11 @@
-# Use an official Java runtime as a parent image
-FROM openjdk:17-jdk-slim
-
-# Set the working directory in the container
+# Stage 1: Build the application
+FROM maven:3.8.5-openjdk-17-slim AS builder
 WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
 
-# Copy the local code to the container
-COPY target/ToDoApp.jar /app/ToDoApp.jar
-
-# Run the application
-CMD ["java", "-jar", "ToDoApp.jar"]
+# Stage 2: Run the application
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY --from=builder /app/target/*.jar app.jar
+CMD ["java", "-jar", "app.jar"]
